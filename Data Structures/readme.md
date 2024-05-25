@@ -1,8 +1,11 @@
-## Problem Statements
-### Dynamic Array
+# Problem Statements
+
+## Dynamic Array
+
 - Declare a 2-dimensional array **arr** of  empty arrays. All arrays are zero indexed.
 - Declare an integer **lastAnswer** and initialize it to **0**.
 - There are **2** types of queries, given as an array of strings for you to parse:
+
 1. Query: **1 x y**
     1. Let **idx = ((x ⊕ lastAnswer) % n)**.
     2. Append the integer **y** to **arr[idx]**.
@@ -16,30 +19,36 @@ Finally, size(arr[idx]) is the number of elements in arr[idx]
 **Function Description**
 Complete the dynamicArray function below.
 dynamicArray has the following parameters:
-- int n: the number of empty arrays to initialize in 
+
+- int n: the number of empty arrays to initialize in
 - string queries[q]: query strings that contain 3 space-separated integers
 
-**Returns**
+**Returns Output**
+
 - int[]: the results of each type 2 query in the order they are presented
 
 **Input Format**
 The first line contains two space-separated integers, **n**, the size of **arr** to create, and ,**q** the number of queries, respectively.
 Each of the **q** subsequent lines contains a query string, **queries[i]**.
 
-**Constraints**
+***Constraints***
+
 - **1<=n, q<=100000**
 - **0<=x, y<=1000000000**
 It is guaranteed that query type **2** will never query an empty array or index.
 
-**Sample Input**
+***Sample Input***
+
+```console
 2 5
 1 0 5
 1 1 7
 1 0 3
 2 1 0
 2 1 1
+```
 
-**Sample Output**
+***Sample Output***
 7
 3
 
@@ -71,4 +80,9 @@ Query 4: Assign the value at index **1** of **arr[((1 ⊕ 7) % 2)] = arr[0]** to
 **arr[0]** = [5, 3]
 **arr[1]** = [7]
 3
- --- 
+
+[Solution](https://github.com/Coding-avatar/javascript_practice/blob/main/Data%20Structures/dynamicArray.js)
+
+---
+
+## Array Chunk
