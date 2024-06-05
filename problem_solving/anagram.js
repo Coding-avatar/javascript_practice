@@ -20,9 +20,9 @@ function sortFilterLower(str) {
  * @param {string} str2 - The second string to compare.
  * @returns {boolean} True if the strings are anagrams, false otherwise.
  */
-function anagram(str1, str2) {
+function isAnagram(str1, str2) {
     let lettersInStr1 = sortFilterLower(str1);
     let lettersInStr2 = sortFilterLower(str2);
     return lettersInStr1 === lettersInStr2;
 }
-module.exports = {anagram,sortFilterLower}
+module.exports = {isAnagram,sortFilterLower}
