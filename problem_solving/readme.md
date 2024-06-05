@@ -1,141 +1,296 @@
 # Problem Statements
 
-## Dynamic Array
+### 1. **Anagram Checker**
 
-- Declare a 2-dimensional array **arr** of  empty arrays. All arrays are zero indexed.
-- Declare an integer **lastAnswer** and initialize it to **0**.
-- There are **2** types of queries, given as an array of strings for you to parse:
+**Problem:**<br>
+Write a JavaScript function that takes two strings and returns `true` if they are anagrams of each other, and `false` otherwise. An anagram is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once.
 
-1. Query: **1 x y**
-    1. Let **idx = ((x ⊕ lastAnswer) % n)**.
-    2. Append the integer **y** to **arr[idx]**.
-2. Query: 2 x y
-    1. Let **idx = ((x ⊕ lastAnswer) % n)**.
-    2. Assign the value **arr[idx][y%size(arr[idx])]** to **lastAnswer**.
-    3. Store the new value of **lastAnswer** to an answers array.
-**Note:** ⊕ is the bitwise XOR operation, which corresponds to the **^** operator in most languages.
-Finally, size(arr[idx]) is the number of elements in arr[idx]
+```javascript
+function isAnagram(str1, str2) {
+    // Your code here
+}
 
-**Function Description**
-Complete the dynamicArray function below.
-dynamicArray has the following parameters:
-
-- int n: the number of empty arrays to initialize in
-- string queries[q]: query strings that contain 3 space-separated integers
-
-### Returns
-
-- int[]: the results of each type 2 query in the order they are presented
-
-**Input Format**
-The first line contains two space-separated integers, **n**, the size of **arr** to create, and ,**q** the number of queries, respectively.
-Each of the **q** subsequent lines contains a query string, **queries[i]**.
-
-***Constraints***
-
-- **1<=n, q<=100000**
-- **0<=x, y<=1000000000**
-It is guaranteed that query type **2** will never query an empty array or index.
-
-***Sample Input***
-
-```console
-2 5
-1 0 5
-1 1 7
-1 0 3
-2 1 0
-2 1 1
+// Test cases
+console.log(isAnagram("listen", "silent")); // true
+console.log(isAnagram("hello", "world")); // false
 ```
-
-***Sample Output***
-7
-3
-
-**Explanation**
-Initial Values:
-**n = 2**
-**lastAnswer = 0**
-**arr[0]** = [ ]
-**arr[1]** = [ ]
-Query 0: Append **5** to **arr[((0 ⊕ 0) % 2)] = arr[0]**.
-**arr[0]** = [5]
-**arr[1]** = [ ]
-
-Query 1: Append **7** to **arr[((1 ⊕ 0) % 2)] = arr[1]**.
-**arr[0]** = [5]
-**arr[1]** = [7]
-
-Query 2: Append **3** to **arr[((0 ⊕ 0) % 2)] = arr[0]**.
-**arr[0]** = [5, 3]
-**arr[1]** = [7]
-
-Query 3: Assign the value at index **0** of **arr[((1 ⊕ 0) % 2)] = arr[1]** to **lastAnswer**, print **lastAnswer**.
-**arr[0]** = [5, 3]
-**arr[1]** = [7]
-7
-
-Query 4: Assign the value at index **1** of **arr[((1 ⊕ 7) % 2)] = arr[0]** to **lastAnswer**, print **lastAnswer**.
-**lastAnswer = 3**
-**arr[0]** = [5, 3]
-**arr[1]** = [7]
-3
-
-[Solution](https://github.com/Coding-avatar/javascript_practice/blob/main/Data%20Structures/dynamicArray.js)
+[Solution](https://github.com/Coding-avatar/javascript_practice/blob/main/problem_solving/anagram.js)
 
 ---
 
-## Fizz Buzz
+### 2. **Capitalize Words**
 
-- Write a function that prints numbers from 1 to a given input. For multiples of 3, print "fizz"; for multiples of 5, print "buzz"; and for multiples of both 3 and 5, print "fizzbuzz".
-[Solution](https://github.com/Coding-avatar/javascript_practice/blob/main/Data%20Structures/fizzbuzz.js)
+**Problem:**<br>
+Write a JavaScript function that takes a string as input and returns a new string where the first letter of each word is capitalized and all other letters are in lowercase. The function should handle leading and trailing spaces and ensure that multiple spaces between words are correctly processed.
 
-## Reverse Array
+```javascript
+function capitalize(str) {
+    // Your code here
+}
 
-- Write a function that reverses the elements of an array.
-[Solution](https://github.com/Coding-avatar/javascript_practice/blob/main/Data%20Structures/reverseArray.js)
+// Test cases
+console.log(capitalize("hello world")); // "Hello World"
+console.log(capitalize("  this is a test  ")); // "This Is A Test"
+console.log(capitalize("javaScript IS awesome")); // "Javascript Is Awesome"
+console.log(capitalize("MULTIPLE     SPACES")); // "Multiple Spaces"
+console.log(capitalize("")); // ""
+```
+[Solution](https://github.com/Coding-avatar/javascript_practice/blob/main/problem_solving/capitalize.js)
 
-## Rotate Array to the Left
+---
 
-- Write a function that rotates the elements of an array to the left by a given number of positions.
-[Solution](https://github.com/Coding-avatar/javascript_practice/blob/main/Data%20Structures/leftRotation.js)
+### 3. **Find Factorial**
 
-## Prime Number Checker
+**Problem:**<br>
+Write a JavaScript function that computes the factorial of a given non-negative integer. The factorial of a non-negative integer n is the product of all positive integers less than or equal to n. If the input is a negative integer, the function should return undefined.
 
-- Write a function that checks if a given number is a prime number.
-[Solution](https://github.com/Coding-avatar/javascript_practice/blob/main/Data%20Structures/primeNumber.js)
+```javascript
+function factorial(n) {
+    // Your code here
+}
 
-## Print Steps
+// Test cases
+console.log(factorial(5)); // 120
+console.log(factorial(0)); // 1
+console.log(factorial(1)); // 1
+console.log(factorial(-1)); // undefined
+console.log(factorial(10)); // 3628800
+```
+[Solution](https://github.com/Coding-avatar/javascript_practice/blob/main/problem_solving/factorial.js)
 
-- Write a function that prints a staircase pattern with '#' characters, where each row has an increasing number of '#' characters.
-[Solution](https://github.com/Coding-avatar/javascript_practice/blob/main/Data%20Structures/steps.js)
+---
 
-## Flatten Nested Array
+### 4. **Fibonacci Series**
 
-- Write a function that flattens a nested array structure into a single-level array.
-[Solution](https://github.com/Coding-avatar/javascript_practice/blob/main/Data%20Structures/flattenArray.js)
+**Problem:**<br>
+Write a JavaScript function that generates the first n numbers of the Fibonacci sequence and returns them in an array. The Fibonacci sequence is a series of numbers where each number is the sum of the two preceding ones, usually starting with 0 and 1.
 
-## Find Most Frequent Character
+```javascript
+function fibonacci(n) {
+    // Your code here
+}
 
-- Write a function that finds the most frequently occurring character in a string.
-[Solution](https://github.com/Coding-avatar/javascript_practice/blob/main/Data%20Structures/maxChar.js)
+// Test cases
+console.log(fibonacci(5)); // [0, 1, 1, 2, 3]
+console.log(fibonacci(10)); // [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]
+console.log(fibonacci(1)); // [0]
+console.log(fibonacci(0)); // []
+```
+[Solution](https://github.com/Coding-avatar/javascript_practice/blob/main/problem_solving/fibonacci.js)
 
-## Check Palindrome
+---
 
-- Write a function that checks if a given string is a palindrome.
-[Solution](https://github.com/Coding-avatar/javascript_practice/blob/main/Data%20Structures/palindrome.js)
+### 5. **FizzBuzz**
 
-## Print Pyramid
+**Problem:**<br>
+Write a JavaScript function that prints the numbers from 1 to n (n is a positive integer) but for multiples of three print “Fizz” instead of the number and for the multiples of five print “Buzz”. For numbers which are multiples of both three and five print “FizzBuzz”.
+```javascript
+function fizzbuzz(input) {
+    // Your code here
+}
 
-- Write a function that generates a pyramid shape with a specified number of levels using hash (#) characters, centered horizontally, and prints it in the console.
-[Solution](https://github.com/Coding-avatar/javascript_practice/blob/main/Data%20Structures/pyramid.js)
+// Test cases
+fizzbuzz(15);
+// Output:
+// 1
+// 2
+// fizz
+// 4
+// buzz
+// fizz
+// 7
+// 8
+// fizz
+// buzz
+// 11
+// fizz
+// 13
+// 14
+// fizzbuzz
+```
+[Solution](https://github.com/Coding-avatar/javascript_practice/blob/main/problem_solving/fizzbuzz.js)
 
-## Count Vowels
+---
 
-- Write a function that counts the number of vowels in a given string.
-[Solution](https://github.com/Coding-avatar/javascript_practice/blob/main/Data%20Structures/vowels.js)
+### 6. **Maximum Frequency**
 
-## Reverse a String
+**Problem:**<br>
+Write a JavaScript function that takes a string as input and returns the character that appears most frequently in the string. If there are multiple characters with the same maximum frequency, the function should return the first character encountered in the string with that frequency.
 
-- Write a function that reverses a given string.
-[Solution](https://github.com/Coding-avatar/javascript_practice/blob/main/Data%20Structures/reverse.js)
+```javascript
+function findMaxChar(str) {
+    // Your code here
+}
+
+// Test cases
+console.log(findMaxChar("hello")); // "l"
+console.log(findMaxChar("apple")); // "p"
+console.log(findMaxChar("banana")); // "a"
+console.log(findMaxChar("programming")); // "g"
+```
+[Solution](https://github.com/Coding-avatar/javascript_practice/blob/main/problem_solving/maxChar.js)
+
+---
+
+### 7. **Palindrome Checker**
+
+**Problem:**<br>
+Write a JavaScript function that takes a string as an input and returns `true` if the string is a palindrome, and `false` otherwise. A palindrome is a word, phrase, number, or other sequences of characters that reads the same forward and backward (ignoring spaces, punctuation, and capitalization).
+
+```javascript
+function isPalindrome(str) {
+    // Your code here
+}
+
+// Test cases
+console.log(isPalindrome("A man, a plan, a canal, Panama")); // true
+console.log(isPalindrome("Racecar")); // true
+console.log(isPalindrome("hello")); // false
+```
+[Solution](https://github.com/Coding-avatar/javascript_practice/blob/main/problem_solving/palindrome.js)
+
+---
+
+### 8. **Prime Number Checker**
+
+**Problem:**<br>
+Write a JavaScript function that determines whether a given positive integer n is a prime number. A prime number is a number greater than 1 that has no positive divisors other than 1 and itself.
+
+```javascript
+function isPrime(n) {
+    // Your code here
+}
+
+// Test cases
+console.log(isPrime(2)); // true
+console.log(isPrime(3)); // true
+console.log(isPrime(4)); // false
+console.log(isPrime(5)); // true
+console.log(isPrime(11)); // true
+console.log(isPrime(15485863)); // true
+```
+[Solution](https://github.com/Coding-avatar/javascript_practice/blob/main/problem_solving/primeNumber.js)
+
+---
+
+### 9. **Display Pyramid**
+
+**Problem:**<br>
+Write a JavaScript function that prints a pyramid pattern of '#' characters with a height of n rows. The pyramid should be centered horizontally. If n is 0, the function should not print anything.
+
+```javascript
+function pyramid(n) {
+    // Your code here
+}
+
+// Test cases
+pyramid(5);
+// Output:
+//     #
+//    ###
+//   #####
+//  #######
+// #########
+
+pyramid(3);
+// Output:
+//   #
+//  ###
+// #####
+
+pyramid(0);
+// (no output)
+```
+[Solution](https://github.com/Coding-avatar/javascript_practice/blob/main/problem_solving/pyramid.js)
+
+---
+
+### 10. **Reverse Word**
+
+**Problem:**<br>
+Write a JavaScript function that takes a string as input and returns a new string with the characters reversed.
+
+```javascript
+function reverseString(word) {
+    // Your code here
+}
+
+// Test cases
+console.log(reverseString("hello")); // "olleh"
+console.log(reverseString("world")); // "dlrow"
+console.log(reverseString("12345")); // "54321"
+console.log(reverseString("")); // ""
+```
+[Solution](https://github.com/Coding-avatar/javascript_practice/blob/main/problem_solving/reverse.js)
+
+---
+
+### 11. **Spiral Matrix**
+
+**Problem:**<br>
+Write a JavaScript function that generates an n x n matrix filled with numbers in spiral order, starting from 1 and spiraling inward.
+
+```javascript
+function spiralMatrix(n) {
+    // Your code here
+}
+
+// Test cases
+console.log(spiralMatrix(2));
+// Output:
+// [
+//  [1, 2],
+//  [4, 3]
+// ]
+console.log(spiralMatrix(3));
+// Output:
+// [
+//  [1, 2, 3],
+//  [8, 9, 4],
+//  [7, 6, 5]
+// ]
+```
+[Solution](https://github.com/Coding-avatar/javascript_practice/blob/main/problem_solving/spiral.js)
+
+---
+
+### 12. **Stairs**
+
+**Problem:**<br>
+Write a JavaScript function that prints a staircase pattern of '#' characters with a height of n rows. Each row of the staircase should have increasing number of '#' characters, starting from 1 in the first row.
+
+```javascript
+function steps(n) {
+    // Your code here
+}
+
+// Test cases
+steps(5);
+// Output:
+// #
+// ##
+// ###
+// ####
+// #####
+```
+[Solution](https://github.com/Coding-avatar/javascript_practice/blob/main/problem_solving/steps.js)
+
+---
+
+### 13. **Count Vowels**
+
+**Problem:**<br>
+Write a JavaScript function that counts the number of vowels (a, e, i, o, u) in a given string str. The function should return the count of vowels found in the string.
+
+```javascript
+function vowels(str) {
+    // Your code here
+}
+
+// Test cases
+console.log(vowels("hello")); // 2
+console.log(vowels("world")); // 1
+console.log(vowels("aeiou")); // 5
+console.log(vowels("")); // 0
+```
+[Solution](https://github.com/Coding-avatar/javascript_practice/blob/main/problem_solving/vowels.js)
