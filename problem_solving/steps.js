@@ -16,4 +16,5 @@ function steps(n) {
         console.log(line);
     }
 }
+
 module.exports = steps

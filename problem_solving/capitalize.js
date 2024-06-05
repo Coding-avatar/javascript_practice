@@ -17,5 +17,5 @@ function capitalize(str) {
     }    
     return result.trim();
 }
-console.log(capitalize("MULTIPLE     SPACES"))
+
 module.exports = capitalize

@@ -25,4 +25,5 @@ function isAnagram(str1, str2) {
     let lettersInStr2 = sortFilterLower(str2);
     return lettersInStr1 === lettersInStr2;
 }
+
 module.exports = {isAnagram,sortFilterLower}
