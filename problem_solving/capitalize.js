@@ -10,10 +10,12 @@ function capitalize(str) {
     let result = '';
     
     for (let word of words) {
-        let capitalizedWord = word.toUpperCase().slice(0, 1) + word.toLowerCase().slice(1);
-        result += capitalizedWord + ' ';
+        if(word!==''){
+            let capitalizedWord = word.toUpperCase().slice(0, 1) + word.toLowerCase().slice(1);
+            result += capitalizedWord + ' ';
+        }
     }    
     return result.trim();
 }
-
+console.log(capitalize("MULTIPLE     SPACES"))
 module.exports = capitalize

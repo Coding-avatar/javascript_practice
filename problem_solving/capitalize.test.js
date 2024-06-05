@@ -59,9 +59,9 @@ describe('capitalize', () => {
     });
 
     // maintains original spacing between words
-    it('should maintain original spacing between words', () => {
+    it('should handle multiple spaces between words', () => {
         const input = 'hello   world';
-        const expectedOutput = 'Hello   World';
+        const expectedOutput = 'Hello World';
         expect(capitalize(input)).toBe(expectedOutput);
     });
 
