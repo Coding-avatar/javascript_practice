@@ -1,4 +1,4 @@
-const factorialUsingRecursion = require('./factorial')
+const factorialUsingRecursion = require('./recursive_factorial')
 describe('factorial using recursion', () => {
 
     // computes factorial of positive integers correctly
