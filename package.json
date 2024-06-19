@@ -6,8 +6,8 @@
   "scripts": {
     "test": "jest"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["javascript","commonjs","javascript interview questions","javascript practice","javascript sample problems"],
+  "author": "Md Nife Salil Islam",
   "license": "MIT",
   "devDependencies": {
     "jest": "^29.7.0"
